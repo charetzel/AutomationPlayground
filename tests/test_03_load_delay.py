@@ -12,12 +12,11 @@ class TestLoadDelay(BaseCase):
         # Navigate to Homepage
         ld_page.open()
         assert ld_page.is_opened()
-        """
         ld_page.driver.implicitly_wait(30)
         # Wait for load delay page load until button is displayed
-        # ld_page.wait().until(ld_page.load_delay_button.is_displayed())
+        ld_page.wait().until(ld_page.load_delay_button.is_displayed())
         assert ld_page.load_delay_button.is_displayed()
         ld_page.click_load_delay_btn()
         ld_page.make_screenshot("load_delay_page_load")
-        """
+        
 
