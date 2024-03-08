@@ -6,7 +6,6 @@ addopts = [
     "-vs"
 ]
 markers = [
-    # Work In Progress (test is not finished)
     "wip"
 ]
 
