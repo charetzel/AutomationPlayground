@@ -10,11 +10,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class PageLoadStrategy(Enum):
-    """
-    More info about page load strategies:
-    https://www.lambdatest.com/blog/selenium-page-load-strategy/
-    https://www.selenium.dev/documentation/webdriver/drivers/options/
-    """
     NONE = "none"
     NORMAL = "normal"
     EAGER = "eager"
@@ -36,12 +31,6 @@ def pytest_addoption(parser: pytest.Parser):
 
 @pytest.fixture(scope="session")
 def config(request: pytest.FixtureRequest):
-    """
-    Additional information on '--no-sandbox' and '--disable-shm-usage'
-    arguments:
-    https://petertc.medium.com/pro-tips-for-selenium-setup-1855a11f88f8
-    https://www.google.com/googlebooks/chrome/med_26.html
-    """
     config = Config()
     config.headless = request.config.getoption("--headless")
     config.browser = request.config.getoption("--browser")

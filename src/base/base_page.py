@@ -35,12 +35,6 @@ class BasePage:
             self.driver.get(self.PAGE_URL)
 
     def wait(self, timeout=10, poll_frequency=0.5) -> WebDriverWait:
-        """
-        Basic setup for Explicit Waits
-        :param timeout: max time (in seconds to wait for condition
-        :param poll_frequency: pause between polls
-        :return: WebDriverWait
-        """
         if timeout is None:
             timeout = 10
         return WebDriverWait(
@@ -100,3 +94,4 @@ class BasePage:
         self, locator: Tuple[str, str], timeout=10
     ) -> bool:
         return not self.is_element_present(locator, timeout)
+
